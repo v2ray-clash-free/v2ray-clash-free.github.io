@@ -339,9 +339,14 @@ A：Clash核心和Clash小猫都是开源项目，使用本身免费，只有部
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是否兼容 Clash 配置文件？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的多策略组如何优化流量分配？</h5></div>
     <div class="panel-body">
-        部分兼容。Sing-box 支持从 Clash 订阅转换工具导入节点，但配置语法略有不同。建议使用第三方订阅转换器，如 sub-converter，将 Clash 格式转换为 Sing-box JSON 格式使用。<hr />    </div>
+        多策略组允许将节点按用途、延迟或地理位置分类，并结合规则文件自动分流流量。这样不同应用如游戏、视频和网页流量都能走最优节点，提高整体访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan TLS 如何避免被 DPI 检测？</h5></div>
+    <div class="panel-body">
+        通过选择真实可访问域名并使用有效证书，Trojan 流量可完全模拟 HTTPS 请求。隐藏真实流量特征，降低被封锁和 DPI 检测风险，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 还能用吗？</h5></div>
@@ -349,9 +354,9 @@ A：Clash核心和Clash小猫都是开源项目，使用本身免费，只有部
         虽然 SSR 项目早已停止维护，但部分服务器和机场仍提供 SSR 节点。SSR 使用的加密与混淆方式能应对部分防火墙检测。不过，建议用户逐步迁移到 V2Ray 或 Trojan 等更现代的协议以获得更好稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 是否兼容 Clash 配置文件？</h5></div>
     <div class="panel-body">
-        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。<hr />    </div>
+        部分兼容。Sing-box 支持从 Clash 订阅转换工具导入节点，但配置语法略有不同。建议使用第三方订阅转换器，如 sub-converter，将 Clash 格式转换为 Sing-box JSON 格式使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 节点分组如何自动切换最佳节点？</h5></div>
@@ -364,24 +369,19 @@ A：Clash核心和Clash小猫都是开源项目，使用本身免费，只有部
         Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多策略组如何优化流量分配？</h5></div>
+    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
     <div class="panel-body">
-        多策略组允许将节点按用途、延迟或地理位置分类，并结合规则文件自动分流流量。这样不同应用如游戏、视频和网页流量都能走最优节点，提高整体访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan TLS 如何避免被 DPI 检测？</h5></div>
-    <div class="panel-body">
-        通过选择真实可访问域名并使用有效证书，Trojan 流量可完全模拟 HTTPS 请求。隐藏真实流量特征，降低被封锁和 DPI 检测风险，保证节点长期可用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
-    <div class="panel-body">
-        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
+        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序可以自动切换吗？</h5></div>
     <div class="panel-body">
         Matsuri 会定期测速节点延迟，结合策略组，可自动选择延迟最低的节点处理流量。这样用户无需手动切换节点，就能保持访问速度和稳定性，优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
+    <div class="panel-body">
+        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 用户带宽限制如何配置？</h5></div>
@@ -415,16 +415,16 @@ A：Clash核心和Clash小猫都是开源项目，使用本身免费，只有部
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-v2ray-subscribe.htm" title="免费Clash节点精选 | 4月22日21.4M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月22日21.4M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-16-free-ssr-subscribe.htm" title="免费Clash节点精选 | 4月16日20.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月16日20.7M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-18-free-node-subscribe-links.htm" title="免费Clash节点精选 | 3月18日22.4M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月18日22.4M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-11-free-ssr-node.htm" title="免费Clash节点精选 | 3月11日21.9M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月11日21.9M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-21-free-node-subscribe-links.htm" title="免费Clash节点精选 | 3月21日19.3M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月21日19.3M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share.htm" title="免费Clash节点精选 | 4月19日18.9M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月19日18.9M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-9-free-ssr-subscribe.htm" title="免费Clash节点精选 | 3月9日20.6M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月9日20.6M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-12-clash-node-daily-updates.htm" title="免费Clash节点精选 | 3月12日21.1M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月12日21.1M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-15-node-share-links.htm" title="免费Clash节点精选 | 4月15日20M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月15日20M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-6-node-share.htm" title="免费Clash节点精选 | 3月6日19.5M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 3月6日19.5M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-11-clash-node-daily-updates.htm" title="免费Clash节点精选 | 4月11日21M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月11日21M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-4-free-clash-subscribe.htm" title="免费Clash节点精选 | 5月4日22.2M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 5月4日22.2M/S|免费Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-clash-node-daily-updates.htm" title="免费Clash节点精选 | 4月28日18.9M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月28日18.9M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-high-speed-nodes.htm" title="免费Clash节点精选 | 5月10日22.6M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 5月10日22.6M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-clash-node-daily-updates.htm" title="免费Clash节点精选 | 5月1日19.6M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 5月1日19.6M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-20-node-share.htm" title="免费Clash节点精选 | 4月20日19.7M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月20日19.7M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-shadowrocket-node.htm" title="免费Clash节点精选 | 5月5日22.5M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 5月5日22.5M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-free-high-speed-nodes.htm" title="免费Clash节点精选 | 5月6日19M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 5月6日19M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-27-clash-node.htm" title="免费Clash节点精选 | 4月27日19.2M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐">免费Clash节点精选 | 4月27日19.2M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，在线Clash机场梯子购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -436,10 +436,10 @@ A：Clash核心和Clash小猫都是开源项目，使用本身免费，只有部
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
